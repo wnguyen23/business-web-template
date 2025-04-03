@@ -7,7 +7,7 @@ import { AboutUsSection } from './components/aboutUsSection/AboutUsSection';
 const HeroSection = () => (
   <section style={{ textAlign: "center", padding: "80px 20px", backgroundColor: "#1a202c", color: "white" }}>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-    <img src="/logo.png" alt="Company Logo" style={{ 'min-width': "20rem", 'max-width': "60%", 'border-radius': '20px' }} />
+    <img src="/logo-1.png" alt="Company Logo" style={{ 'min-width': "20rem", 'max-width': "60%", 'border-radius': '20px' }} />
     <h1 style={{ fontSize: "2.5rem", fontWeight: "bold" }}>Empower Your Business with Expert Software Solutions</h1>
     <p style={{ fontSize: "1.2rem", marginTop: "10px" }}>Helping businesses grow with modern technology.</p>
     <ContactForm />
@@ -17,7 +17,14 @@ const HeroSection = () => (
 const ServicesSection = () => (
   <section style={{ padding: "1rem 1rem", backgroundColor: "#edf2f7", textAlign: "center" }}>
     <h2 style={{ fontSize: "2rem", fontWeight: "bold" }}>Our Services</h2>
-    <div style={{ display: "list-items", justifyContent: "center", flexWrap: "wrap", marginTop: "1rem", marginLeft: "0.75rem", marginRight: "0.75rem" }}>
+    <div style={{ 
+      display: "grid", 
+      gridTemplateColumns: "repeat(4, 1fr)", /* Fixed 4 columns for even distribution */
+      gap: "1.5rem", 
+      justifyItems: "center", 
+      marginTop: "1rem", 
+      padding: "0 1rem" 
+    }}>
       <ServiceCard title="Business Consultation" description="Provide expert guidance to help your businesses leverage technology for efficiency and growth."/> 
       <ServiceCard title="Website Creation & Enhancement" description="Tailored solutions to fit your business needs." />
       <ServiceCard title="SEO Optimization" description="Optimize your website to rank higher on search engines, improve visibility, and attract organic traffic."/>
@@ -46,14 +53,14 @@ const ContactSection = () => (
 
 const Footer = () => (
   <footer style={{ backgroundColor: "#1a202c", color: "white", textAlign: "center", padding: "20px" }}>
-    <p>&copy; {new Date().getFullYear()} ATP Software Consulting Services Co. All rights reserved.</p>
+    <p>&copy; {new Date().getFullYear()} WN Software Consulting Services Co. All rights reserved.</p>
   </footer>
 );
 
 const LandingPage = () => (
   <div>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-    <Header headerTitle='ATP SOFTWARE CONSULTING SERVICES' />
+    <Header headerTitle='WN SOFTWARE CONSULTING SERVICES' />
     <HeroSection />
     <ServicesSection />
     <AboutUsSection description='We are a team of experienced software consultants dedicated to helping businesses succeed.' />

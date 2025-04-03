@@ -89,11 +89,19 @@ nav a:hover {
 }
 
 .service-card {
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
   background-color: white;
   border-radius: 8px;
   text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 100%; /* Ensure cards take full width of their grid cell */
+  max-width: 300px; /* Limit maximum width for consistent appearance */
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 /* About Section */
