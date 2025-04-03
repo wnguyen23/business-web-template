@@ -36,18 +36,22 @@ const ContactForm = () => {
 
   return (
     <div>
-      <button style={{ marginTop: "20px", padding: "10px 20px", fontSize: "1rem", backgroundColor: "#4299e1", color: "white", border: "none", borderRadius: "5px", cursor: "pointer" }} onClick={() => setIsOpen(true)} className="contact-button">
-        Get Started
+      <button
+        style={{ marginTop: "20px", padding: "10px 20px", fontSize: "1rem", backgroundColor: "#4299e1", color: "white", border: "none", borderRadius: "5px", cursor: "pointer" }}
+        onClick={() => setIsOpen(true)}
+        className="contact-button"
+      >
+        Book Your Free Consultation
       </button>
       {isOpen && (
         <div className="modal-overlay">
           <div className="modal-container">
-            <h2 className="modal-title">Contact Us</h2>
+            <h2 className="modal-title" style={{ color: "#FFFFFF" }}>Contact Us</h2>
             <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
               <div>
-                <label className="form-label">Name: </label>
                 <input
                   type="text"
+                  placeholder="Name"
                   {...register("name", { required: "Name is required." })}
                   className="form-input"
                 />
@@ -55,9 +59,9 @@ const ContactForm = () => {
               </div>
 
               <div>
-                <label className="form-label">Phone: </label>
                 <input
                   type="text"
+                  placeholder="Phone"
                   {...register("phone", { required: "Phone number is required." })}
                   className="form-input"
                 />
@@ -65,9 +69,9 @@ const ContactForm = () => {
               </div>
 
               <div>
-                <label className="form-label">Email: </label>
                 <input
                   type="email"
+                  placeholder="Email"
                   {...register("email", { required: "Email is required.", pattern: { value: /^[^@\s]+@[^@\s]+\.[^@\s]+$/, message: "Invalid email" } })}
                   className="form-input"
                 />
@@ -75,9 +79,9 @@ const ContactForm = () => {
               </div>
 
               <div>
-                <label className="form-label">Subject: </label>
                 <input
                   type="text"
+                  placeholder="Subject"
                   {...register("subject", { required: "Subject is required." })}
                   className="form-input"
                 />
@@ -85,8 +89,8 @@ const ContactForm = () => {
               </div>
 
               <div>
-                <label className="form-label">Message: </label>
                 <textarea
+                  placeholder="Message"
                   {...register("message", { required: "Message is required." })}
                   className="form-textarea"
                   rows="4"
